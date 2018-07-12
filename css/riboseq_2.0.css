@@ -5,4 +5,18 @@ body {
 	background-repeat: repeat-x;
 }
 /* CSS Document */
+a {
+   text-decoration: none;
+   outline: 0;
+}
+
+a:hover, a:focus, a:visited {
+   outline: 0;
+   text-decoration: none;
+}
+
+img {
+   border: 0;
+   outline: 0;
+}
 
