@@ -8,8 +8,6 @@
               href="{% static 'images/favicon.ico' %}"
               type="image/x-icon"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <!-- <link rel="stylesheet"
-       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
         <!-- MDB icon -->
         <link rel="icon"
               href="{% static 'images/favicon.ico' %}"
@@ -22,7 +20,7 @@
               href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"/>
         <!-- MDB -->
         <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}" />
-        <!-- <link href="css/riboseq-css.css"  rel="stylesheet" type="text/css"> -->
+        <link href="{% static 'css/riboseq-css.css' %}"  rel="stylesheet" type="text/css">
         <title>
             {% block titile %}RiboSeq.Org{% endblock %}
         </title>

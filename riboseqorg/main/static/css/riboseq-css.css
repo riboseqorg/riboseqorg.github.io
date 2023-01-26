@@ -1,5 +1,6 @@
 @charset "utf-8";
-body {
+
+.riboseqorg {
 	background-color: rgb(244,234,223);
 	background-image: url(../images/150617-1415-page-background.jpg);
 	background-repeat: repeat-x;
