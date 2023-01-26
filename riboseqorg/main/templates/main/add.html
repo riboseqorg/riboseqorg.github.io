@@ -1,10 +1,37 @@
 {% extends 'main/base.html' %}
 {% block title %}RiboSeq.Org Submission Form{% endblock %}
+
+{% load crispy_forms_tags %}  
+
 {% block content %}
-    <h1>RiboSeq.org submission form</h1>
     <form method="post" action="/add">
+        <h1>RiboSeq.org Sample Submission Form</h1>
+
         {% csrf_token %}
-        {{ form.as_p }}
+
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                {{ form.sample_name | as_crispy_field }}
+            </div>
+            <div class="col-lg-6 col-md-12">
+                {{ form.library_type | as_crispy_field }}
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            {{ form.sample_description | as_crispy_field }}
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                {{ form.cell_line | as_crispy_field }}        
+            </div>
+            <div class="col-lg-6 col-md-12">
+                {{ form.treatment | as_crispy_field }}
+            </div>
+        </div>
+        <br>
+
         <button type="submit" name="save">Submit</button>
     </form>
 {% endblock %}

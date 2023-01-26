@@ -1,5 +1,7 @@
 from django import forms
 
+
+
 class addNewSample(forms.Form):
     auto_id = True
     sample_name = forms.CharField(max_length=200)
