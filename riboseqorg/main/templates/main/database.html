@@ -1,0 +1,11 @@
+{% extends 'main/base.html' %}
+{% block title %}RiboSeq.Org Database{% endblock %}
+{% block content %}
+    <h1>RiboSeq.org Database</h1>
+    <ul>
+        <li>Sample Name, Sample Description, Verified</li>
+        {% for sample in ls.sample_set.all %}
+            <li>{{ sample.sample_name }}, {{ sample.sample_description }}, {{ sample.verified }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

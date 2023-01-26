@@ -1,0 +1,10 @@
+{% extends 'main/base.html' %}
+{% block title %}RiboSeq.Org Submission Form{% endblock %}
+{% block content %}
+    <h1>RiboSeq.org submission form</h1>
+    <form method="post" action="/add">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" name="save">Submit</button>
+    </form>
+{% endblock %}
