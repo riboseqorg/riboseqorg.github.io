@@ -17,10 +17,19 @@
             table.searchPanes.container().prependTo(table.table().container());
             table.searchPanes.resizePanes();
         });
+        $(document).ready(function () {
+            var oTable = $('.datatable').dataTable({
+            // ...
+            "processing": true,
+            "serverSide": true,
+            "ajax": "{% url 'order_list_json' %}"
+         });
+    // ...
+});
     </script>
-    <h1>RiboSeq.org Database</h1>
 	<div class="fw-container">
 		<div class="fw-header">
+            <h1>RiboSeq.org Database</h1>
 			<div class="nav-wrapper">
 				<div class="nav-search">
 					<div class="nav-item i-user">
@@ -39,7 +48,6 @@
 		</div>
 		<div class="fw-body">
 			<div class="content">
-
                 <table id="example" class="table table-striped nowrap" style="width:90%; margin-left:auto; margin-right:auto">
                     <thead>
                         <tr>
