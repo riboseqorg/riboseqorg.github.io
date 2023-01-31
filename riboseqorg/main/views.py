@@ -8,6 +8,8 @@ from .forms import addNewSample
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from django.utils.html import escape
 
+import pandas as pd
+
 
 class OrderListJson(BaseDatatableView):
     # The model we're going to show
@@ -60,14 +62,19 @@ def index(response):
     return render(response, "main/home.html", {})
 
 
-def db(response):
+def db(request):
     ls = Data.objects.get(id=1)
-    paginator = Paginator(contact_list, 25) # Show 25 contacts per page.
-
+    # ls = Data.objects.all()    
+    df = pd.DataFrame(list(ls.sample_set.values()))
+    # df = pd.DataFrame(list())
+    print(df)
+    
+    paginator = Paginator(ls.sample_set.all(), 5) # Show 25 contacts per page.
+    
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'list.html', {'page_obj': page_obj})
-    return render(response, "main/database.html", {'ls': ls })
+    return render(request, 'main/database.html', {'ls': page_obj})
+
 
 def add(response):
     if response.method == "POST":
