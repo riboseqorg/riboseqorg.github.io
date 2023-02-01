@@ -3,7 +3,6 @@
 {% load static %}
 {% block content %}
     <!-- RiboSeq.org -->
-
     <script type="text/javascript">
         function MM_swapImgRestore() { //v3.0
           var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
@@ -26,6 +25,22 @@
           var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
            if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
         }
+        $(document).ready(function(){
+            $("#trips").hover(function(){
+                $('#trips').attr('src', function(index, attr){ return attr.replace("{% static 'images/230124-1038-Riboseq-Gateway-slices_05.jpg' %}", "{% static 'images/230124-1427-Riboseq-Gateway-slices-RO_05.jpg' %}");} );
+                $('#trips_top').attr('src', function(index, attr){ return attr.replace("{% static 'images/230124-1038-Riboseq-Gateway-slices_02.jpg' %}", "{% static 'images/230124-1427-Riboseq-Gateway-slices-RO_02.jpg' %}");} );
+            },function(){
+                $('#trips').attr('src', function(index, attr){ return attr.replace("{% static 'images/230124-1427-Riboseq-Gateway-slices-RO_05.jpg' %}","{% static 'images/230124-1038-Riboseq-Gateway-slices_05.jpg' %}" );} );
+                $('#trips_top').attr('src', function(index, attr){ return attr.replace("{% static 'images/230124-1427-Riboseq-Gateway-slices-RO_02.jpg' %}","{% static 'images/230124-1038-Riboseq-Gateway-slices_02.jpg' %}" );} );
+            });$("#trips_top").hover(function(){
+                $('#trips').attr('src', function(index, attr){ return attr.replace("{% static 'images/230124-1038-Riboseq-Gateway-slices_05.jpg' %}", "{% static 'images/230124-1427-Riboseq-Gateway-slices-RO_05.jpg' %}");} );
+                $('#trips_top').attr('src', function(index, attr){ return attr.replace("{% static 'images/230124-1038-Riboseq-Gateway-slices_02.jpg' %}", "{% static 'images/230124-1427-Riboseq-Gateway-slices-RO_02.jpg' %}");} );
+            },function(){
+                $('#trips').attr('src', function(index, attr){ return attr.replace("{% static 'images/230124-1427-Riboseq-Gateway-slices-RO_05.jpg' %}","{% static 'images/230124-1038-Riboseq-Gateway-slices_05.jpg' %}" );} );
+                $('#trips_top').attr('src', function(index, attr){ return attr.replace("{% static 'images/230124-1427-Riboseq-Gateway-slices-RO_02.jpg' %}","{% static 'images/230124-1038-Riboseq-Gateway-slices_02.jpg' %}" );} );
+            });
+        });
+        
     </script>
     <div class="riboseqorg">
         <table id="Table_01"
@@ -55,7 +70,7 @@
                          alt=""/>
                 </td>
                 <td>
-                    <img src="{% static 'images/spacer.gif" width="1" height="164" alt=""/>
+                    <img src="{% static 'images/spacer.gif' %}" width="1" height="164" alt=""/>
                 </td>
             </tr>
             <tr>
@@ -71,9 +86,7 @@
                     </a>
                 </td>
                 <td rowspan="2">
-                    <a href="https://trips.ucc.ie/"
-                       onMouseOut="MM_swapImgRestore()"
-                       onMouseOver="MM_swapImage('trips','','{% static 'images/230124-1427-Riboseq-Gateway-slices-RO_05.jpg' %}',1)">
+                    <a href="https://trips.ucc.ie/">
                         <img src="{% static 'images/230124-1038-Riboseq-Gateway-slices_05.jpg' %}"
                              alt="TripsViz"
                              width="197"
