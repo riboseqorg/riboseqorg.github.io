@@ -64,16 +64,14 @@ def index(response):
 
 def db(request):
     ls = Data.objects.get(id=1)
-    # ls = Data.objects.all()    
-    df = pd.DataFrame(list(ls.sample_set.values()))
-    # df = pd.DataFrame(list())
-    print(df)
-    
-    paginator = Paginator(ls.sample_set.all(), 5) # Show 25 contacts per page.
+    print(ls.sample_set.all())
+    paginator = Paginator(ls.sample_set.all(), 5) 
     
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'main/database.html', {'ls': page_obj})
+    for i in page_obj:
+        print(i)
+    return render(request, 'main/database.html', {'ls': page_obj })
 
 
 def add(response):
