@@ -27,59 +27,75 @@
     // ...
 });
     </script>
-	<div class="fw-container">
-		<div class="fw-header">
-            <h1>RiboSeq.org Database</h1>
-			<div class="nav-wrapper">
-				<div class="nav-search">
-					<div class="nav-item i-user">
-						<div class="account"></div>
-					</div>
-					<div class="nav-item search">
-						<form action="/q/" method="get">
-							<input type="text" name="q" placeholder="Search . . ." autocomplete="off">
-						</form>
-					</div>
-				</div>
-			</div>
-			<div class="nav-ad">
-				<div data-ea-publisher="datatablesnet" data-ea-type="image" data-ea-manual="true"></div>
-			</div>
-		</div>
-		<div class="fw-body">
-			<div class="content">
-                <table id="example" class="table table-striped nowrap" style="width:90%; margin-left:auto; margin-right:auto">
-                    <thead>
-                        <tr>
-                            <th>Accession</th>
-                            <th>Description</th>
-                            <th>Cell Line</th>
-                            <th>Library Type</th>
-                            <th>Treatment</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for sample in ls %}
+    <section id="database">
+        <div class="fw-container">
+            <div class="fw-header">
+                <h1>RiboSeq.org Database</h1>
+                <div class="nav-wrapper">
+                    <div class="nav-search">
+                        <div class="nav-item i-user">
+                            <div class="account"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-ad">
+                    <div data-ea-publisher="datatablesnet" data-ea-type="image" data-ea-manual="true"></div>
+                </div>
+            </div>
+            <div class="fw-body">
+                <div class="content">
+
+                    <table id="example" class="table table-striped nowrap" style="width:90%; margin-left:auto; margin-right:auto">
+                        <thead>
                             <tr>
-                                <td>{{ sample.sample_name }}</td>
-                                <td>{{ sample.sample_description }}</td>
-                                <td>{{ sample.cell_line }}</td>
-                                <td>{{ sample.library_type }}</td>
-                                <td>{{ sample.treatment }}</td>
+                                <th>Accession</th>
+                                <th>Description</th>
+                                <th>Cell Line</th>
+                                <th>Library Type</th>
+                                <th>Treatment</th>
+                                <!-- <th>Trips-Viz</th>
+                                <th>GWIPS-viz</th>
+                                <th>RiboCrypt</th> -->
+                                <th scope="col">Select</th>
+
                             </tr>
-                        {% endfor %}
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>Accession</th>
-                            <th>Description</th>
-                            <th>Cell Line</th>
-                            <th>Library Type</th>
-                            <th>Treatment</th>
-                        </tr>
-                    </tfoot>
-                </table>
+                        </thead>
+                        <tbody>
+                            {% for sample in ls %}
+                                <tr>
+                                    <td>{{ sample.sample_name }}</td>
+                                    <td>{{ sample.sample_description }}</td>
+                                    <td>{{ sample.cell_line }}</td>
+                                    <td>{{ sample.library_type }}</td>
+                                    <td>{{ sample.treatment }}</td>
+                                    <!-- <td><a href="http://trips.ucc.ie">Trips-Viz</a></td>
+                                    <td><a href="http://gwips.ucc.ie">GWIPS-viz</a></td>
+                                    <td><a href="http://RiboCrypt.org">RiboCrypt</a></td> -->
+                                    <td><input type="checkbox" /></td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Accession</th>
+                                <th>Description</th>
+                                <th>Cell Line</th>
+                                <th>Library Type</th>
+                                <th>Treatment</th>
+                                <!-- <th>Trips-Viz</th>
+                                <th>GWIPS-viz</th>
+                                <th>RiboCrypt</th> -->
+                                <th scope="col">Select</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div style="align-content: center;">
+                        <button type="button" class="btn btn-primary">Link to Trips-Viz</button>
+                        <button type="button" class="btn btn-primary">Link to GWIPS-viz</button>
+                        <button type="button" class="btn btn-primary">Link to RiboCrypt</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 {% endblock %}

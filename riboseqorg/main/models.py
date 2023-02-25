@@ -15,5 +15,9 @@ class Sample(models.Model):
     library_type = models.CharField(max_length=200, blank=True)
     treatment = models.CharField(max_length=200, blank=True)
     verified = models.BooleanField(default=False)
+    # trips = models.CharField(max_length=200, blank=True)
+    # gwips = models.CharField(max_length=200, blank=True)
+    # ribocrypt = models.CharField(max_length=200, blank=True)
+
     def __str__(self):
         return self.sample_name
