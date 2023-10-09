@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href='images/favicon.ico' type="image/x-icon"/>
+    <title>RiboSeq.Org</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="..." crossorigin="anonymous">
+
+    <!-- Include Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="..." crossorigin="anonymous"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.nav-pills a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            });
+        });
+        $(document).ready(function () {
+        // Initialize outer tabs
+        $('#v-pills-tab a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
+            // Initialize inner tabs when an outer tab is shown
+            var innerTabId = $(e.target).attr('href'); // Get the href of the inner tab container
+            $(innerTabId + ' a[data-toggle="tab"]').tab('show'); // Show the first inner tab
+        });
+
+        // Initialize inner tabs
+        $('#myTab a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            // Do something when an inner tab is shown
+        });
+    });
+    </script>
+
+	<link href="css/riboseq-css.css" rel="stylesheet">	
+</head>
+<body class="bg-light">
+
+    <!-- Header -->
+    <header>
+        <nav class="container mx-auto d-flex justify-content-between align-items-center navbar navbar-expand-lg navbar-light bg-light sticky-to">
+
+            <a class="navbar-brand" href="https://riboseq.org">
+                <img src='images/Logo.png' height="50" alt="RiboSeq.org Logo" loading="lazy">
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Desktop Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="https://riboseq.org">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card white-bg">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">RiboSeq.Org Resources</a>
+                                        <a class="nav-link" id="v-pills-other-tools-tab" data-toggle="pill" href="#v-pills-other-tools" role="tab" aria-controls="v-pills-other-tools" aria-selected="false">Other Tools</a>
+                                        <a class="nav-link" id="v-pills-Publications-tab" data-toggle="pill" href="#v-pills-Publications" role="tab" aria-controls="v-pills-Publications" aria-selected="false">RiboSeq.Org Publications</a>
+                                        <a class="nav-link" id="v-pills-Related-tab" data-toggle="pill" href="#v-pills-Related" role="tab" aria-controls="v-pills-Related" aria-selected="false">Related Publications</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="tab-content" id="v-pills-tabContent">
+                                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel">
+                                            <h1>RiboSeq.Org Resources</h1>
+                                            <p>RiboSeq.Org is a collection of tools and processed datasets that enable users to explore Ribo-Seq and ancillary datasets in the browser</p>
+                                            <nav class="navbar navbar-expand-lg">
+                                                <ul class="navbar-nav mx-auto">
+                                                  <li class="nav-item">
+                                                    <a class="nav-link" href="#gwips">GWIPS-viz</a>
+                                                  </li>
+                                                  <li class="nav-item">
+                                                    <a class="nav-link" href="#ribocrypt">RiboCrypt</a>
+                                                  </li>
+                                                  <li class="nav-item">
+                                                    <a class="nav-link" href="#trips">Trips-Viz</a>
+                                                  </li>
+                                                  <li class="nav-item">
+                                                    <a class="nav-link" href="#ribogalaxy">RiboGalaxy</a>
+                                                  </li>
+                                                  <li class="nav-item">
+                                                    <a class="nav-link" href="#dataportal">Data Portal</a>
+                                                  </li>
+                                                </ul>
+                                              </nav>
+                                            <div id="gwips">
+                                                <h2> GWIPS-viz</h2>
+                                                <p>GWIPS-viz is a <a href="https://genome.ucsc.edu/">UCSC Genome Browser</a> clone that has been tailored for the visualization of Ribo-Seq data. It is available at <a href="https://gwips.ucc.ie">gwips.ucc.ie</a>.</p>
+                                                <br>
+                                            </div>
+                                            <div id="ribocrypt">
+                                                <h2>RiboCrypt</h2>
+                                                <p>
+                                                    RiboCrypt is a versatile web-based tool designed for in-depth analysis of ribosome profiling (ribo-seq) data and its variants. It offers a rich collection of pre-processed datasets from over 10,000 experiments across 70+ organisms and various experimental conditions. RiboCrypt goes beyond mere data summarization, providing connected modules to explore data at multiple levels of abstraction and in the context of genomic, transcriptomic, and proteomic features. This tool serves as a powerful resource for generating hypotheses and discovering novel instances of translational regulation in a high-throughput manner. Additionally, for power users, RiboCrypt offers a Bioconductor package that enables exploration of various large-scale Next-Generation Sequencing (NGS) data types, enhancing its utility in NGS research.</p>
+                                                <br>
+                                            </div>
+                                            <div id="trips">
+                                                <h2>Trips-Viz</h2>
+                                                <p>Trips-Viz is an interactive platform designed for the analysis and visualization of ribosome profiling (Ribo-Seq) and shotgun RNA sequencing (RNA-Seq) data. It functions as both a database and a server, providing access to a growing repository of processed Ribo-Seq and RNA-Seq data aligned to reference transcriptomes. Trips-Viz offers a user-friendly interface for exploring and analyzing these datasets, making it a valuable resource for researchers in genomics and proteomics studies. Additionally, it supports the visualization of proteomics data and allows users to upload custom reference transcriptomes and various data types, expanding its versatility and utility in diverse research applications.</p>
+                                                <br>
+                                            </div>
+                                            <div id="ribogalaxy">
+                                                <h2>RiboGalaxy</h2>
+                                                <p>RiboGalaxy is a <a href="https://usegalaxy.org">Galaxy</a> instance that has been populated with tools for the analysis of ribosome profiling data in the browser. It is available at <a href="https://ribogalaxy.genomicsdatascience.ie">ribogalaxy.genomicsdatascience.ie</a>.</p>
+                                                <br>
+                                            </div>
+                                            <div id="dataportal">
+                                                <h2>Ribo-Seq Data Portal</h2>
+                                                <p>
+                                                The Ribo-Seq Data Portal is a database of Ribo-Seq data that can be used to identify and explore existing ribosome profiling datasets. The metadata curation and data pre-processing that was carried out during the development of this resource makes large-scale re-analysis of Ribo-Seq data considerably more feasible. It is available at <a href="https://recode.ucc.ie/home">recode.ucc.ie/home</a>.
+                                                </p>
+                                                <br>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-other-tools" role="tabpanel" aria-labelledby="v-pills-other-tools-tab">
+                                            <h1>Other Tools</h1>
+                                            <p>Other tools produced by members of the RiboSeq.Org team and related researchers include: </p>
+                                            <div class="tool">
+                                                <h2>ORFik</h2>
+                                                <p><strong>Description:</strong> ORFik is a comprehensive R package for the analysis of translation</p>
+                                                <p><strong>Code Link:</strong> <a href="https://github.com/Roleren/ORFik">github.com/Roleren/ORFik</a></p>
+                                                <p><strong>Publication Link:</strong> <a href="https://doi.org/10.1186/s12859-021-04254-w">10.1186/s12859-021-04254-w</a></p>
+                                            </div>
+                                            <div class="tool">
+                                                <h2>RUST - Ribo-seq Unit Seq Transform</h2>
+                                                <p><strong>Description:</strong> A simple normalization method to limit the impact of the heterogeneity of Ribo-Seq data</p>
+                                                <p><strong>Code Link:</strong> <a href="https://github.com/JackCurragh/RUST">github.com/JackCurragh/RUST</a></p>
+                                                <p><strong>Publication Link:</strong> <a href="https://doi.org/10.1038/ncomms12915">10.1038/ncomms1291</a></p>
+                                            </div>
+                                            <div class="tool">
+                                                <h2>RiboMetric</h2>
+                                                <p><strong>Description:</strong> Metric based quality assessment for Ribo-Seq data</p>
+                                                <p><strong>Code Link:</strong> <a href="https://github.com/JackCurragh/RUST">github.com/JackCurragh/RiboMetric</a></p>
+                                                <p><strong>Publication Link:</strong> None</p>
+                                            </div>
+                                        </div>                                        
+                                        <div class="tab-pane fade" id="v-pills-Publications" role="tabpanel" aria-labelledby="v-pills-Publications-tab">
+                                            <h1>Publications:</h1>
+                                            <p>Publications that describe RiboSeq.Org resources include:</p>
+                                            <ul>
+                                                <li>
+                                                    <p><strong>RiboGalaxy: A Galaxy-based Web Platform for Ribosome Profiling Data Processing - 2023 Update.</strong> (2023) Alla D Fedorova, Jack A S Tierney, Audrey M Michel, Pavel V Baranov <em>J Mol Biol.,</em> DOI: <a href="https://doi.org/10.1016/j.jmb.2023.168043">10.1016/j.jmb.2023.168043</a></p>
+                                                </li>
+                                                <li>
+                                                    <p><strong>Trips-Viz: an environment for the analysis of public and user-generated ribosome profiling data</strong> (2021) Stephen J Kiniry, Ciara E Judge, Audrey M Michel, Pavel V Baranov <em>Nucleic Acids Res.,</em> DOI: <a href="https://doi.org/10.1093/nar/gkab323">10.1093/nar/gkab323</a></p>
+                                                </li>
+                                                <li>
+                                                    <p><strong>Trips-Viz: a transcriptome browser for exploring Ribo-Seq data.</strong> (2019) Stephen J Kiniry, Patrick B F O'Connor, Audrey M Michel, Pavel V Baranov <em>Nucleic Acids Res.,</em> DOI: <a href="https://doi.org/10.1093/nar/gky842">10.1093/nar/gky842</a></p>
+                                                </li>
+                                                <li>
+                                                    <p><strong>The GWIPS-viz Browser</strong> (2018) Stephen J Kiniry, Audrey M Michel, Pavel V Baranov <em>Curr Protoc Bioinformatics.,</em> DOI: <a href="https://doi.org/10.1002/cpbi.50">10.1002/cpbi.50</a></p>
+                                                </li>
+                                                <li>
+                                                    <p><strong>GWIPS-viz: 2018 update.</strong> (2018) Audrey M Michel, Stephen J Kiniry, Patrick B F O'Connor, James P Mullan, Pavel V Baranov. <em>Nucleic Acids Res.,</em> DOI: <a href="https://doi.org/10.1093/nar/gkx790">10.1093/nar/gkx790</a></p>
+                                                </li>
+                                                <li>
+                                                    <p><strong>RiboGalaxy: A browser based platform for the alignment, analysis and visualization of ribosome profiling data.</strong> (2016) Audrey M Michel, James P A Mullan, Vimalkumar Velayudhan, Patrick B F O'Connor, Claire A Donohue, Pavel V Baranov <em>RNA Biol,</em> DOI: <a href="https://doi.org/10.1080/15476286.2016.1141862">10.1080/15476286.2016.1141862</a></p>
+                                                </li>
+                                                <li>
+                                                    <p><strong>GWIPS-viz as a tool for exploring ribosome profiling evidence supporting the synthesis of alternative proteoforms.</strong> (2015) Audrey M Michel, Anna M Ahern, Claire A Donohue, Pavel V Baranov <em>Proteomics,</em> DOI: <a href="https://doi.org/10.1002/pmic.201400603">10.1002/pmic.201400603</a></p>
+                                                </li>
+                                                <li>
+                                                    <p><strong>GWIPS-viz: development of a ribo-seq genome browser.</strong> (2014) Audrey M Michel, Gearoid Fox, Anmol M Kiran, Christof De Bo, Patrick B F O'Connor, Stephen M Heaphy, James P A Mullan, Claire A Donohue, Desmond G Higgins, Pavel V Baranov<em> Nucleic Acids Res.,</em> DOI: <a href="https://doi.org/10.1093/nar/gkt1035">10.1093/nar/gkt1035</a></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-Related" role="tabpanel" aria-labelledby="v-pills-Related-tab">
+                                            <h2>Related Publications:</h2>
+                                            <p>Examples of Publications that make use of RiboSeq.Org resources include:</p>
+                                            <ul>
+                                                <li>
+                                                    <p><strong>Annotation of uORFs in the OMIM genes allows to reveal pathogenic variants in 5'UTRs.</strong> (2023) Author(s) Alexandra Filatova, Ivan Reveguk, Maria Piatkova, Daria Bessonova, Olga Kuziakova, Victoria Demakova, Alexander Romanishin, Veniamin Fishman, Yerzhan Imanmalik, Nikolay Chekanov, Rostislav Skitchenko, Yury Barbitoff, Olga Kardymon, Mikhail Skoblov. <em>Nucleic Acids Res.,</em> DOI: <a href="https://doi.org/10.1093/nar/gkac1247">10.1093/nar/gkac1247</a></p>
+                                                </li>
+                                                <li>
+                                                    <p><strong>Exploring Evidence of Non-coding RNA Translation With Trips-Viz and GWIPS-Viz Browsers.</strong> (2021) Author(s) Oza Zaheed, Stephen J Kiniry, Pavel V Baranov, Kellie Dean <em>Front Cell Dev Biol.,</em> DOI: <a href="https://doi.org/10.3389/fcell.2021.703374">10.3389/fcell.2021.703374</a></p>
+                                                </li>
+                                                <li>
+                                                    <p><strong>A bioinformatics approach to identify novel long, non-coding RNAs in breast cancer cell lines from an existing RNA-sequencing dataset.</strong> (2020) Oza Zaheed, Julia Samson, Kellie Dean <em>Noncoding RNA Res.,</em> DOI: <a href="https://doi.org/10.1016/j.ncrna.2020.02.004">10.1016/j.ncrna.2020.02.004</a></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<footer class="text-center text-white">
+		<!-- Section: Funder logos -->
+		<section>
+			<div class="funders">
+				<a href="https://www.sfi.ie/" class="funder-logo">
+					<img src="images/sfi-logo.svg" alt="Science Foundation Ireland" class="funder-image">
+				</a>
+				<a href="https://elixir-europe.org/" class="funder-logo">
+					<img src="images/Elixir.png" alt="Elixir Europe" class="funder-image">
+				</a>
+				<a href="https://research.ie/" class="funder-logo">
+					<img src="images/IRC_Logo.png" alt="Irish Research Council" class="funder-image" style="width: 100px;">
+				</a>
+				<a href="https://www.fnp.org.pl/en/" class="funder-logo">
+					<img src="images/Foundation_for_Polish_Science_logo.jpg" alt="Foundation For Polish Science" class="funder-image">
+				</a>
+				<a href="https://www.ncn.gov.pl/en" class="funder-logo">
+					<img src="images/national_science_centre_poland.png" alt="National Science Centre Poland" class="funder-image">
+				</a>
+				<a href="https://wellcome.org/" class="funder-logo">
+					<img src="images/Wellcome.png" alt="Wellcome" class="funder-image">
+				</a>
+			</div>
+		</section>
+		<!-- End of Section: Funder logos -->
+		<!-- Section: Social media -->
+		<section class="mb-4"  style="background-color: rgba(0, 0, 0, 0.063);">
+			<!-- Twitter -->
+			<a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://twitter.com/riboseqorg"
+				role="button" data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
+			<!-- Github -->
+			<a class="btn btn-link btn-floating btn-lg text-dark m-1"
+				href="https://github.com/riboseqorg" role="button" data-mdb-ripple-color="dark"><i
+					class="fab fa-github"></i></a>
+			<p class="text-dark">RiboSeq.Org</p>		
+		</section>
+		<!-- End Section: Social media -->
+		<!-- Copyright -->
+		<!-- End Copyright -->
+	</footer>
+</body>
+</html>
