@@ -30,7 +30,7 @@
   .panel img {
       height: 200px; /* Set a fixed height for all images */
       object-fit: contain; /* Maintain aspect ratio and fit within the fixed height */
-   padding: 1rem;
+   padding: 3rem;
    /* center image */
    display: block;
    margin-left: auto;
