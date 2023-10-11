@@ -23,29 +23,58 @@
    padding-bottom: 2rem;
 
    background-color: #f4eae0;
-   background-image: url('../images/150617-1415-page-background.jpg');
+   background-image: url('../images/background_inverted1.png');
    background-size: cover; /* Optional: Adjust the background size */
-    background-repeat: no-repeat; /* Optional: Prevent image repetition */
+   background-repeat: no-repeat; /* Optional: Prevent image repetition */
 }
-  .panel img {
-      height: 200px; /* Set a fixed height for all images */
-      object-fit: contain; /* Maintain aspect ratio and fit within the fixed height */
-   padding: 3rem;
-   /* center image */
+.panel img {
+   height: 80px; /* Set a fixed height for all images */
+   width: 130px;
+   object-fit: contain; /* Maintain aspect ratio and fit within the fixed height */
    display: block;
    margin-left: auto;
    margin-right: auto;
-   
-  }
-  .panel {
-      margin: 1rem;
+
+}
+.panel {
+   margin: 1rem;
    display: flex;
    flex-direction: column;
    align-items: center; /* Center horizontally */
    justify-content: center; /* Center vertically */
-  }
+   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2); /* Add a box-shadow effect */
 
-  .white-bg {
+}
+
+.panel-content {
+   padding: 1rem;
+   display: flex;
+   align-items: center;
+}
+
+.panel-content p {
+   font-size: 1rem;
+}
+
+.white-bg {
    background-color: #fff; /* Set the background color to white */
    border: none; /* Remove the default card border */
+}
+
+.panel-content img{
+   margin-right: 1rem;
+}
+
+p {
+   font-size: 18px; /* Adjust the font size as needed */
+}
+.panel:hover {
+    box-shadow: 0 0 50px rgba(212, 212, 212, 0.2); /* Add a box-shadow effect on hover */
+    /* Add any other styles you want to apply on hover */
+}
+/* Media query for smaller screens */
+@media (max-width: 300px) {
+   p {
+       font-size: 16px; /* Adjust the font size for smaller screens */
+   }
 }
