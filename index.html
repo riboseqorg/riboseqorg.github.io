@@ -6,6 +6,7 @@
     <link rel="icon" href='images/favicon.ico' type="image/x-icon"/>
     <title>RiboSeq.Org</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.17.0/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Include Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="..." crossorigin="anonymous">
@@ -44,15 +45,17 @@
 		<div class="container mt-5">
 			<div class="row justify-content-center">
 				<div class="col-lg-10 col-xl-8 col-md-6 col-sm-4 text-center text-dark">
-					<p class=" text-lg text-md text-sm text-xs">
+					<p class="text-lg text-md text-sm text-xs">
 						RiboSeq.Org hosts a collection of tools for the processing, analysis and visualization of ribosome profiling data. Explore over 13,000 Ribo-Seq samples in your browser or download processed files for further analysis offline.
 					</p>
 				</div>
 			</div>
 		</div>
+	
 		<div class="container mt-3">
 			<div class="row justify-content-center">
-				<div class="col-lg-10 col-xl-8 panel bg-white rounded">
+				<!-- First Panel -->
+				<div class="col-lg-10 col-xl-8 panel bg-white rounded" style="position: relative;">
 					<a href="https://recode.ucc.ie/home" class="text-decoration-none text-dark d-flex align-items-center panel-content">
 						<!-- Placeholder image (You can replace this with your actual data portal image when available) -->
 						<img src="images/favicon.png" alt="Placeholder Image" class="mb-4 mt-3 img-fluid">
@@ -62,46 +65,92 @@
 								Query, Explore & Download preprocessed Ribo-Seq data
 							</p>
 						</div>
+						<a href="about.html#dataportal" class="learn-more-link" style="position: absolute; top: 1rem; right: 1rem;">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+								<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+								<path d="m8.93 6.588-2.29.287-.082.380.450.083c.294.070.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+							</svg>
+						</a>
 					</a>
 				</div>
 			</div>
 		</div>
 	
 		<!-- Second Row Panels (100% width) -->
-		<div class="container mt-3"> <!-- Use container for 100% width -->
+		<div class="container mt-3">
 			<div class="row justify-content-center">
-				<div class="col-md-6 col-lg-4 col-xl-3 bg-white rounded panel ">
+				<!-- Second Panel -->
+				<div class="col-md-6 col-lg-4 col-xl-3 bg-white rounded panel" style="position: relative;">
 					<a href="https://gwips.ucc.ie" class="text-decoration-none text-dark d-flex align-items-center panel-content">
 						<img src="images/GWIPS_logo.svg" alt="GWIPS Logo" class="mb-4 img-fluid">
-						<p class="lead text-lg text-md text-sm text-xs text-center mb-0 ml-3 mr-3">
-							Genome aligned Ribo-Seq data in a UCSC-style browser
-						</p>
+						<div>
+							<p class="lead text-lg text-md text-sm text-xs text-center mb-0 ml-3 mr-3">
+								Genome aligned Ribo-Seq data in a UCSC-style browser
+							</p>
+						</div>
+						<!-- Add SVG Link Here -->
+						<a href="about.html#gwips" class="learn-more-link" style="position: absolute; top: 1rem; left: 1rem;">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+								<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+								<path d="m8.93 6.588-2.29.287-.082.380.450.083c.294.070.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+							</svg>
+						</a>
 					</a>
 				</div>
 	
-				<div class="col-md-6 col-lg-4 col-xl-3 panel bg-white rounded">
+				<!-- Third Panel -->
+				<div class="col-md-6 col-lg-4 col-xl-3 panel bg-white rounded" style="position: relative;">
 					<a href="https://trips.ucc.ie" class="text-decoration-none text-dark d-flex align-items-center panel-content">
 						<img src="images/trips_logo.svg" alt="Trips Logo" class="mb-4 img-fluid">
-						<p class="lead text-lg text-md text-sm text-xs text-center mb-0 ml-3 mr-3">Visualisation and analysis of transcriptome aligned Ribo-Seq data in the browser</p>
+						<div>
+							<p class="lead text-lg text-md text-sm text-xs text-center mb-0 ml-3 mr-3">Visualisation and analysis of transcriptome aligned Ribo-Seq</p>
+						</div>
+						<!-- Add SVG Link Here -->
+						<a href="about.html#trips" class="learn-more-link" style="position: absolute; top: 1rem; left: 1rem">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+								<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+								<path d="m8.93 6.588-2.29.287-.082.380.450.083c.294.070.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+							</svg>
+						</a>
 					</a>
 				</div>
 	
-				<div class="col-md-6 col-lg-4 col-xl-3 panel bg-white rounded">
+				<!-- Fourth Panel -->
+				<div class="col-md-6 col-lg-4 col-xl-3 panel bg-white rounded" style="position: relative;">
 					<a href="https://ribocrypt.org" class="text-decoration-none text-dark d-flex align-items-center panel-content">
 						<img src="images/ribocrypt_logo.svg" alt="RiboCrypt Logo" class="mb-4 img-fluid">
-						<p class="lead text-lg text-md text-sm text-xs text-center mb-0 ml-3 mr-3">Interactive genomics visualisation and analysis - with a focus on Ribo-Seq</p>
+						<div>
+							<p class="lead text-lg text-md text-sm text-xs text-center mb-0 ml-3 mr-3">Interactive genomics visualization and analysis - with a focus on Ribo-Seq</p>
+						</div>
+						<!-- Add SVG Link Here -->
+						<a href="about.html#ribocrypt" class="learn-more-link" style="position: absolute; top: 1rem; left: 1rem;">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+								<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+								<path d="m8.93 6.588-2.29.287-.082.380.450.083c.294.070.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+							</svg>
+						</a>
 					</a>
 				</div>
 			</div>
 		</div>
 	
 		<!-- Third Row Panel (40% width) -->
-		<div class="container mt-3"> <!-- Use container for 40% width -->
+		<div class="container mt-3">
 			<div class="row justify-content-center">
-				<div class="col-md-6 col-lg-5 col-xl-4 panel bg-white rounded"> <!-- Adjust column classes for 40% width -->
+				<!-- Fifth Panel -->
+				<div class="col-md-6 col-lg-5 col-xl-4 panel bg-white rounded" style="position: relative;">
 					<a href="https://ribogalaxy.genomicsdatascience.ie" class="text-decoration-none text-dark d-flex align-items-center panel-content">
 						<img src="images/ribogalaxy_logo.svg" alt="RiboGalaxy Logo" class="mb-4 img-fluid">
-						<p class="lead text-lg text-md text-sm text-xs text-center mb-0 ml-3 mr-3">End-to-end Ribo-Seq data processing in the browser</p>
+						<div>
+							<p class="lead text-lg text-md text-sm text-xs text-center mb-0 ml-3 mr-3">End-to-end Ribo-Seq data processing in the browser</p>
+						</div>
+						<!-- Add SVG Link Here -->
+						<a href="about.html#ribogalaxy" class="learn-more-link" style="position: absolute; top: 1rem; right: 1rem;">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+								<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+								<path d="m8.93 6.588-2.29.287-.082.380.450.083c.294.070.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+							</svg>
+						</a>
 					</a>
 				</div>
 			</div>

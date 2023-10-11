@@ -78,3 +78,14 @@ p {
        font-size: 16px; /* Adjust the font size for smaller screens */
    }
 }
+
+.learn-more-link {
+   display: inline;
+   text-decoration: none;
+   color: #007bff; /* Link color */
+}
+
+/* Style the link on hover, for example, change color */
+.learn-more-link:hover {
+   color: #ff4500; /* Change color on hover */
+}
