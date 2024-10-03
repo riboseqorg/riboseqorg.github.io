@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href='../images/favicon.ico' type="image/x-icon"/>
+    <title>RiboSeq.Org - Tutorial Template</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="../css/riboseq-css.css" rel="stylesheet">
+    <style>
+        .tutorial-content img, .tutorial-content video {
+            max-width: 100%;
+            height: auto;
+            margin: 15px 0;
+        }
+        .tutorial-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .tutorial-content h2 {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .tutorial-content ol, .tutorial-content ul {
+            margin-bottom: 20px;
+        }
+        .tutorial-content li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <!-- Header -->
+    <header>
+        <nav class="container mx-auto d-flex justify-content-between align-items-center navbar navbar-expand-lg navbar-light bg-light sticky-top">
+            <a class="navbar-brand" href="https://riboseq.org">
+                <img src='../images/RiboSeqOrg_nobg_logo.png' height="100" alt="RiboSeq.org Logo" loading="lazy">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="https://riboseq.org">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../tutorials.html">Tutorials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://gwips.ucc.ie/HOF.html">Hall of Fame</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <h1 class="text-center mb-5">End-to-end Workflow</h1>
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto tutorial-content">
+                <p class="lead">Brief introduction to the tutorial and its objectives.</p>
+                <p>
+                    This tutorial will guide you through the process of analyzing Ribo-Seq data from start to finish. 
+                    We will start with the raw data and perform quality control, read alignment, and downstream analysis. 
+                    By the end of this tutorial, you will have a better understanding of how to analyze Ribo-Seq data and 
+                    generate meaningful results using RiboSeq.Org.
+                </p>
+                <p>
+                    The tutorial is divided into the following sections, available as separate PDFs:
+                </p>
+                <div class="list-group">
+                    <a href="RiboGalaxy/RiboGalaxy_HandsOnTurorial_PART1_preprocessing_RiboSeq_and_RNASeq_20Feb23.pdf" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                        1. Preprocessing
+                        <span class="badge bg-primary rounded-pill">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </span>
+                    </a>
+                    <a href="RiboGalaxy/RiboGalaxy_HandsOnTurorial_PART2_mapping_to_transciptome_20Feb23.pdf" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                        2. Mapping To Transcriptome
+                        <span class="badge bg-primary rounded-pill">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </span>
+                    </a>
+                    <a href="RiboGalaxy/RiboGalaxy_HandsOnTurorial_PART3_mapping_to_genome_20Feb23.pdf" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                        3. Mapping To Genome
+                        <span class="badge bg-primary rounded-pill">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </span>
+                    </a>
+                    <a href="RiboGalaxy/RiboGalaxy_HandsOnTutorial_PART4_TCPseq_TIseq_20Feb23.pdf" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                        4. TCP-Seq and TI-Seq
+                        <span class="badge bg-primary rounded-pill">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+	<footer class="text-center text-white">
+		<!-- Section: Funder logos -->
+		<section>
+			<div class="funders">
+				<a href="https://www.sfi.ie/" class="funder-logo">
+					<img src="images/sfi-logo.svg" alt="Science Foundation Ireland" class="funder-image">
+				</a>
+				<a href="https://elixir-europe.org/" class="funder-logo">
+					<img src="images/Elixir.png" alt="Elixir Europe" class="funder-image">
+				</a>
+				<a href="https://research.ie/" class="funder-logo">
+					<img src="images/IRC_Logo.png" alt="Irish Research Council" class="funder-image" style="width: 100px;">
+				</a>
+				<a href="https://www.fnp.org.pl/en/" class="funder-logo">
+					<img src="images/Foundation_for_Polish_Science_logo.jpg" alt="Foundation For Polish Science" class="funder-image">
+				</a>
+				<a href="https://www.ncn.gov.pl/en" class="funder-logo">
+					<img src="images/national_science_centre_poland.png" alt="National Science Centre Poland" class="funder-image">
+				</a>
+				<a href="https://wellcome.org/" class="funder-logo">
+					<img src="images/Wellcome.png" alt="Wellcome" class="funder-image">
+				</a>
+			</div>
+		</section>
+		<!-- End of Section: Funder logos -->
+		<!-- Section: Social media -->
+		<section class="mb-4"  style="background-color: rgba(0, 0, 0, 0.063);">
+			<!-- Twitter -->
+			<a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://twitter.com/riboseqorg"
+				role="button" data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
+			<!-- Github -->
+			<a class="btn btn-link btn-floating btn-lg text-dark m-1"
+				href="https://github.com/riboseqorg" role="button" data-mdb-ripple-color="dark"><i
+					class="fab fa-github"></i></a>
+			<p class="text-dark">RiboSeq.Org</p>		
+		</section>
+		<!-- End Section: Social media -->
+		<!-- Copyright -->
+		<!-- End Copyright -->
+	</footer>
+</body>
+</html>
