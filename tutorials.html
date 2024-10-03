@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href='images/favicon.ico' type="image/x-icon"/>
+    <title>RiboSeq.Org - Tutorials</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="css/riboseq-css.css" rel="stylesheet">
+    <style>
+        .tutorial-card {
+            transition: transform 0.3s;
+        }
+        .tutorial-card:hover {
+            transform: translateY(-5px);
+        }
+        .tutorial-preview {
+            height: 200px;
+            overflow: hidden;
+        }
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+        }
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+        }
+        .video-preview {
+            position: relative;
+            cursor: pointer;
+        }
+        .video-preview::after {
+            content: '\25B6';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <!-- Header -->
+    <header>
+        <nav class="container mx-auto d-flex justify-content-between align-items-center navbar navbar-expand-lg navbar-light bg-light sticky-top">
+            <a class="navbar-brand" href="https://riboseq.org">
+                <img src='images/RiboSeqOrg_nobg_logo.png' height="100" alt="RiboSeq.org Logo" loading="lazy">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="https://riboseq.org">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="tutorials.html">Tutorials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://gwips.ucc.ie/HOF.html">Hall of Fame</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+        <h1 class="text-center mb-5">RiboSeq.Org Tutorials</h1>
+
+        <!-- Tutorial Categories -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <ul class="nav nav-pills justify-content-center" id="tutorialTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="overviews-tab" data-bs-toggle="pill" data-bs-target="#overviews" type="button" role="tab">Overviews</button>
+                    </li>
+                    <li class="nav-item dropdown" role="presentation">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Tool-specific</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="data-portal-tab" data-bs-toggle="pill" data-bs-target="#data-portal" type="button" role="tab">Data Portal</a></li>
+                            <li><a class="dropdown-item" id="ribogalaxy-tab" data-bs-toggle="pill" data-bs-target="#ribogalaxy" type="button" role="tab">RiboGalaxy</a></li>
+                            <li><a class="dropdown-item" id="trips-viz-tab" data-bs-toggle="pill" data-bs-target="#trips-viz" type="button" role="tab">Trips-Viz</a></li>
+                            <li><a class="dropdown-item" id="gwips-viz-tab" data-bs-toggle="pill" data-bs-target="#gwips-viz" type="button" role="tab">GWIPS-viz</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="end-to-end-tab" data-bs-toggle="pill" data-bs-target="#end-to-end" type="button" role="tab">End-to-end</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="task-specific-tab" data-bs-toggle="pill" data-bs-target="#task-specific" type="button" role="tab">Task-specific</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <section class="content">
+            <div style="padding: 5%;">
+                <!-- Tutorial Content -->
+                <div class="tab-content" id="tutorialTabContent">
+                    <div class="tab-pane fade" id="overviews" role="tabpanel"></div>
+                    <div class="tab-pane fade" id="data-portal" role="tabpanel"></div>
+                    <div class="tab-pane fade" id="ribogalaxy" role="tabpanel"></div>
+                    <div class="tab-pane fade" id="trips-viz" role="tabpanel"></div>
+                    <div class="tab-pane fade" id="gwips-viz" role="tabpanel"></div>
+                    <div class="tab-pane fade" id="end-to-end" role="tabpanel"></div>
+                    <div class="tab-pane fade" id="task-specific" role="tabpanel"></div>
+                </div>
+            </div>
+        </section>
+
+    <footer class="text-center text-white">
+        <!-- Section: Funder logos -->
+        <section>
+            <div class="funders">
+                <a href="https://www.sfi.ie/" class="funder-logo">
+                    <img src="images/sfi-logo.svg" alt="Science Foundation Ireland" class="funder-image">
+                </a>
+                <a href="https://elixir-europe.org/" class="funder-logo">
+                    <img src="images/Elixir.png" alt="Elixir Europe" class="funder-image">
+                </a>
+                <a href="https://research.ie/" class="funder-logo">
+                    <img src="images/IRC_Logo.png" alt="Irish Research Council" class="funder-image" style="width: 100px;">
+                </a>
+                <a href="https://www.fnp.org.pl/en/" class="funder-logo">
+                    <img src="images/Foundation_for_Polish_Science_logo.jpg" alt="Foundation For Polish Science" class="funder-image">
+                </a>
+                <a href="https://www.ncn.gov.pl/en" class="funder-logo">
+                    <img src="images/national_science_centre_poland.png" alt="National Science Centre Poland" class="funder-image">
+                </a>
+                <a href="https://wellcome.org/" class="funder-logo">
+                    <img src="images/Wellcome.png" alt="Wellcome" class="funder-image">
+                </a>
+            </div>
+        <!-- End of Section: Funder logos -->
+        <!-- Section: Social media -->
+        <section class="mb-4"  style="background-color: rgba(0, 0, 0, 0.063);">
+            <!-- Twitter -->
+            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://twitter.com/riboseqorg"
+                role="button" data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
+            <!-- Github -->
+            <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+                href="https://github.com/riboseqorg" role="button" data-mdb-ripple-color="dark"><i
+                    class="fab fa-github"></i></a>
+            <p class="text-dark">RiboSeq.Org</p>		
+        </section>
+        <!-- End Section: Social media -->
+    </footer>
+    <script>
+        const tutorials = [
+            // General Tutorials
+            {
+                title: "Trips-Viz Overview",
+                description: "General Help Information for Trips-Viz",
+                url: "https://trips.ucc.ie/help/", 
+                categories: ["overviews", "trips-viz"],
+                type: "page"
+            },
+            {
+                title: "GWIPS-viz Overview",
+                description: "Extensive Paper on GWIPS-viz and its features",
+                url: "https://currentprotocols.onlinelibrary.wiley.com/doi/10.1002/cpbi.50",
+                categories: ["overviews", "gwips-viz"],
+                type: "page"
+            },
+            {
+                title: "RiboGalaxy Overview",
+                description: "Discover how to use RiboGalaxy for end-to-end Ribo-Seq data processing in the browser.",
+                url: "https://jackcurragh.github.io/RiboGalaxy-Tutorials/", 
+                categories: ["overviews", "ribogalaxy"],
+                type: "page"
+            },
+            {
+                title: "RiboSeq Data Portal Overview",
+                description: "Discover the basics of the RiboSeq Data Portal",
+                url: "tutorials/RDP_Overview.html",
+                categories: ["overviews", "data-portal"],
+                type: "page"
+            },
+            // RiboGalaxy-Specific
+            {
+                title: "Preprocessing Ribo-Seq and RNA-Seq Data",
+                description: "Hands on tutorial on how to preprocess Ribo-Seq and RNA-Seq data using RiboGalaxy",
+                url: "tutorials/RiboGalaxy/RiboGalaxy_HandsOnTurorial_PART1_preprocessing_RiboSeq_and_RNASeq_20Feb23.pdf", 
+                categories: ["ribogalaxy", "task-specific"],
+                type: "page"
+            },
+            {
+                title: "Mapping to the Transcriptome",
+                description: "Hands on tutorial on how to map Ribo-Seq and RNA-Seq data to the transcriptome using RiboGalaxy",
+                url: "tutorials/RiboGalaxy/RiboGalaxy_HandsOnTurorial_PART2_mapping_to_transciptome_20Feb23.pdf", 
+                categories: ["ribogalaxy", "task-specific"],
+                type: "page"
+            },
+            {
+                title: "Mapping to the Genome",
+                description: "Hands on tutorial on how to map Ribo-Seq and RNA-Seq data to the genome using RiboGalaxy.",
+                url: "tutorials/RiboGalaxy/RiboGalaxy_HandsOnTurorial_PART3_mapping_to_genome_20Feb23.pdf", 
+                categories: ["ribogalaxy", "task-specific"],
+                type: "page"
+            },
+            {
+                title: "Handling TCP-Seq and TI-Seq Data",
+                description: "Hands on tutorial handling TCP-Seq and TI-Seq data.",
+                url: "tutorials/RiboGalaxy/RiboGalaxy_HandsOnTutorial_PART4_TCPseq_TIseq_20Feb23.pdf", 
+                categories: ["ribogalaxy", "task-specific"],
+                type: "page"
+            },
+            // Trips-Specific
+            {
+                title: "Differential Translation",
+                description: "Discover how to use carry out differential translation analysis using Trips-Viz.",
+                url: "https://www.youtube.com/watch?v=fiQ3hNzIIns", 
+                categories: ["trips-viz", "task-specific"],
+                type: "youtube"
+            },
+            {
+                title: "Exploring a Gene of Interest",
+                description: "Discover how to use Trips-Vizs single transcript plot functionality",
+                url: "https://www.youtube.com/watch?v=cZs8D24xEDY",
+                categories: ["trips-viz", "task-specific"],
+                type: "youtube"
+            },
+            {
+                title: "Comparing Ribosome Profiles Across Conditions",
+                description: "Discover how to use Trips-Viz to compare ribosome profiles across conditions for the same transcript",
+                url: "https://www.youtube.com/watch?v=M5WEHfPfyQI",
+                categories: ["trips-viz", "task-specific"],
+                type: "youtube"
+            },
+            {
+                title: "Assess Ribo-Seq Data Quality and Metadata",
+                description: "Assess Periodicity, Read Length Distribution, and other quality metrics of Ribo-Seq data",
+                url: "https://www.youtube.com/watch?v=OcRIGikbMgY",
+                categories: ["trips-viz", "task-specific"],
+                type: "youtube"
+            },
+            {
+                title: "Explore Transcriptome Properties",
+                description: "Discover how to use Trips-Viz to examine properties of loaded transcriptomes",
+                url: "https://www.youtube.com/watch?v=r94KTouy1us",
+                categories: ["trips-viz", "task-specific"],
+                type: "youtube"
+            },
+            {
+                title: "Detecting Translated Regions (Translons)",
+                description: "Use Ribo-Seq to detect translated regions (translons) from Ribo-Seq data",
+                url: "https://www.youtube.com/watch?v=vmqlGSKTi8w",
+                categories: ["trips-viz", "task-specific"],
+                type: "youtube"
+            },
+        ];
+
+        function createTutorialCard(tutorial) {
+            let previewHtml;
+            if (tutorial.type === "youtube") {
+                const videoId = tutorial.url.split('v=')[1];
+                const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/0.jpg`;
+                previewHtml = `
+                    <div class="video-preview" onclick="openYouTubeVideo('${tutorial.url}')">
+                        <img src="${thumbnailUrl}" alt="${tutorial.title}" width="100%" height="200">
+                    </div>
+                `;
+            } else {
+                previewHtml = `
+                    <div class="tutorial-preview">
+                        <iframe src="${tutorial.url}" width="100%" height="200" frameborder="0"></iframe>
+                    </div>
+                `;
+            }
+
+            return `
+                <div class="col">
+                    <div class="card h-100 tutorial-card">
+                        ${previewHtml}
+                        <div class="card-body">
+                            <h5 class="card-title">${tutorial.title}</h5>
+                            <p class="card-text">${tutorial.description}</p>
+                            <a href="${tutorial.url}" class="btn btn-primary" ${tutorial.type === "youtube" ? 'onclick="openYouTubeVideo(\'' + tutorial.url + '\'); return false;"' : ''}>View Tutorial</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function openYouTubeVideo(url) {
+            window.open(url, '_blank');
+        }
+
+        function populateTutorials() {
+            const categories = ['overviews', 'data-portal', 'ribogalaxy', 'trips-viz', 'gwips-viz', 'end-to-end', 'task-specific'];
+            
+            categories.forEach(category => {
+                const categoryTutorials = tutorials.filter(tutorial => tutorial.categories.includes(category));
+                const categoryElement = document.getElementById(category);
+                if (categoryElement) {
+                    categoryElement.innerHTML = `
+                        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                            ${categoryTutorials.map(createTutorialCard).join('')}
+                        </div>
+                    `;
+                }
+            });
+        }
+
+        // Populate tutorials and activate the first tab
+        document.addEventListener('DOMContentLoaded', function() {
+            populateTutorials();
+            var firstTab = document.querySelector('.dropdown-item');
+            var firstTabContent = document.querySelector('.tab-pane');
+            firstTab.classList.add('active');
+            firstTabContent.classList.add('show', 'active');
+        });
+        // Activate the first tab by default
+        document.addEventListener('DOMContentLoaded', function() {
+            var firstTab = document.querySelector('.dropdown-item');
+            var firstTabContent = document.querySelector('.tab-pane');
+            firstTab.classList.add('active');
+            firstTabContent.classList.add('show', 'active');
+        });
+    </script>
+</body>
+</html>
