@@ -66,7 +66,6 @@
         </nav>
     </header>
 
-
         <h1 class="text-center mb-5">RiboSeq.Org Tutorials</h1>
 
         <!-- Tutorial Categories -->
@@ -154,28 +153,32 @@
                 description: "General Help Information for Trips-Viz",
                 url: "https://trips.ucc.ie/help/", 
                 categories: ["overviews", "trips-viz"],
-                type: "page"
+                type: "page",
+                previewImage: "tutorials/Trips_overview_header.png"
             },
             {
                 title: "GWIPS-viz Overview",
                 description: "Extensive Paper on GWIPS-viz and its features",
                 url: "https://currentprotocols.onlinelibrary.wiley.com/doi/10.1002/cpbi.50",
                 categories: ["overviews", "gwips-viz"],
-                type: "page"
+                type: "page",
+                previewImage: "tutorials/GWIPS_header.png" 
             },
             {
                 title: "RiboGalaxy Overview",
                 description: "Discover how to use RiboGalaxy for end-to-end Ribo-Seq data processing in the browser.",
                 url: "https://jackcurragh.github.io/RiboGalaxy-Tutorials/", 
                 categories: ["overviews", "ribogalaxy"],
-                type: "page"
+                type: "page",
+                previewImage: "tutorials/RiboGalaxy_overview_header.png"
             },
             {
                 title: "RiboSeq Data Portal Overview",
                 description: "Discover the basics of the RiboSeq Data Portal",
                 url: "tutorials/RDP_Overview.html",
                 categories: ["overviews", "data-portal"],
-                type: "page"
+                type: "page",
+                previewImage: "tutorials/RDP_overview_header.png"
             },
             // End-to-end 
             {
@@ -183,7 +186,8 @@
                 description: "A run through of Ribo-Seq data analysis from start (RiboGalaxy) to finish (GWIPS-viz & Trips-Viz)",
                 url: "tutorials/EndToEnd.html",
                 categories: ["overviews","end-to-end", "ribogalaxy", "gwips-viz", "trips-viz"],
-                type: "page"
+                type: "page",
+                previewImage: "tutorials/End-To-End_header.png"
             },            
 
             // RiboGalaxy-Specific
@@ -192,28 +196,32 @@
                 description: "Hands on tutorial on how to preprocess Ribo-Seq and RNA-Seq data using RiboGalaxy",
                 url: "tutorials/RiboGalaxy/RiboGalaxy_HandsOnTurorial_PART1_preprocessing_RiboSeq_and_RNASeq_20Feb23.pdf", 
                 categories: ["ribogalaxy", "task-specific"],
-                type: "page"
+                type: "page",
+                previewImage: "tutorials/Preprocessing_header.png"
             },
             {
                 title: "Mapping to the Transcriptome",
                 description: "Hands on tutorial on how to map Ribo-Seq and RNA-Seq data to the transcriptome using RiboGalaxy",
                 url: "tutorials/RiboGalaxy/RiboGalaxy_HandsOnTurorial_PART2_mapping_to_transciptome_20Feb23.pdf", 
                 categories: ["ribogalaxy", "task-specific"],
-                type: "page"
+                type: "page",
+                previewImage: "tutorials/Map_transcriptome_header.png"
             },
             {
                 title: "Mapping to the Genome",
                 description: "Hands on tutorial on how to map Ribo-Seq and RNA-Seq data to the genome using RiboGalaxy.",
                 url: "tutorials/RiboGalaxy/RiboGalaxy_HandsOnTurorial_PART3_mapping_to_genome_20Feb23.pdf", 
                 categories: ["ribogalaxy", "task-specific"],
-                type: "page"
+                type: "page",
+                previewImage: "tutorials/Map_genome_header.png"
             },
             {
                 title: "Handling TCP-Seq and TI-Seq Data",
                 description: "Hands on tutorial handling TCP-Seq and TI-Seq data.",
                 url: "tutorials/RiboGalaxy/RiboGalaxy_HandsOnTutorial_PART4_TCPseq_TIseq_20Feb23.pdf", 
                 categories: ["ribogalaxy", "task-specific"],
-                type: "page"
+                type: "page",
+                previewImage: "tutorials/TCP_TI_header.png"
             },
             //GWIPS-specific
             {
@@ -221,7 +229,8 @@
                 description: "Hands on tutorial handling TCP-Seq and TI-Seq data.",
                 url: "https://gwips.ucc.ie/goldenPath/help/hgTracksHelp_GWIPS.html", 
                 categories: ["gwips-viz", "task-specific"],
-                type: "page"
+                type: "page",
+                previewImage: "tutorials/GWIPS_user_guide_header.png"
             },
             // Trips-Specific
             {
@@ -273,14 +282,16 @@
                 description: "Quick demonstration on how to get the links to explore all samples that matches your selected filters",
                 url: "tutorials/RDP_explore_all.html",
                 categories: ["data-portal", "task-specific"],
-                type: "video"
+                type: "video",
+                previewImage: "tutorials/Explore_All_header.png"
             },
             {
                 title: "Download All Metadata",
                 description: "Quick demonstration on how to download all metadata that matches your selected filters",
                 url: "tutorials/RDP_download_all.html",
                 categories: ["data-portal", "task-specific"],
-                type: "video"
+                type: "video",
+                previewImage: "tutorials/Download_All_header.png"
             }
         ];
 
@@ -292,6 +303,12 @@
                 previewHtml = `
                     <div class="video-preview" onclick="openYouTubeVideo('${tutorial.url}')">
                         <img src="${thumbnailUrl}" alt="${tutorial.title}" width="100%" height="200">
+                    </div>
+                `;
+            } else if (tutorial.previewImage) {
+                previewHtml = `
+                    <div class="tutorial-preview">
+                        <img src="${tutorial.previewImage}" alt="${tutorial.title}" width="100%" height="200">
                     </div>
                 `;
             } else {
