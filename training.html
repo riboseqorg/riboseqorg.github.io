@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <title>RiboSeq.Org - Trainings</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- Include Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="..."
+      crossorigin="anonymous"
+    />
+
+    <!-- Include Bootstrap JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="..."
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".nav-pills a").click(function (e) {
+          e.preventDefault();
+          $(this).tab("show");
+        });
+      });
+    </script>
+
+    <link href="css/riboseq-css.css" rel="stylesheet" />
+  </head>
+  <body class="bg-light">
+    <!-- Header -->
+    <header>
+      <nav
+        class="container mx-auto d-flex justify-content-between align-items-center navbar navbar-expand-lg navbar-light bg-light sticky-top"
+      >
+        <a class="navbar-brand" href="https://riboseq.org">
+          <img
+            src="images/RiboSeqOrg_nobg_logo.png"
+            height="100"
+            alt="RiboSeq.org Logo"
+            loading="lazy"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="https://riboseq.org">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="trainings.html">Trainings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://gwips.ucc.ie/HOF.html"
+                >Hall of Fame</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card white-bg">
+              <div class="card-body">
+                <h1 class="mb-4">RiboSeq.Org Training Courses and Workshops</h1>
+                <p class="lead">
+                  We offer various training courses and workshops on ribosome profiling data analysis. Here you can find information about our upcoming and past training events.
+                </p>
+                <div class="row">
+                  <div class="col-md-3">
+                    <div
+                      class="nav flex-column nav-pills"
+                      id="v-pills-tab"
+                      role="tablist"
+                      aria-orientation="vertical"
+                    >
+                      <a
+                        class="nav-link active"
+                        id="v-pills-upcoming-tab"
+                        data-toggle="pill"
+                        href="#v-pills-upcoming"
+                        role="tab"
+                        aria-controls="v-pills-upcoming"
+                        aria-selected="true"
+                        >Upcoming Trainings</a
+                      >
+                      <a
+                        class="nav-link"
+                        id="v-pills-past-tab"
+                        data-toggle="pill"
+                        href="#v-pills-past"
+                        role="tab"
+                        aria-controls="v-pills-past"
+                        aria-selected="false"
+                        >Past Trainings</a
+                      >
+                    </div>
+                  </div>
+                  <div class="col-md-9">
+                    <div class="tab-content" id="v-pills-tabContent">
+                      <div
+                        class="tab-pane fade show active"
+                        id="v-pills-upcoming"
+                        role="tabpanel"
+                        aria-labelledby="v-pills-upcoming-tab"
+                      >
+                        <h2>Upcoming Trainings</h2>
+                        <div class="card mb-3">
+                          <div class="card-body">
+                            <h3 class="card-title">EMBO Practical Course</h3>
+                            <h4 class="card-subtitle mb-2 text-muted">Measuring translational dynamics by ribosome profiling</h4>
+                            <p class="card-text">
+                              <strong>Date:</strong> 23 - 28 March 2025<br>
+                              <strong>Link:</strong> <a href="https://www.embl.org/about/info/course-and-conference-office/events/mtd25-01/" target="_blank">Event Details</a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="tab-pane fade"
+                        id="v-pills-past"
+                        role="tabpanel"
+                        aria-labelledby="v-pills-past-tab"
+                      >
+                        <h2>Past Trainings</h2>
+                        <div class="card mb-3">
+                          <div class="card-body">
+                            <h3 class="card-title">EMBO Practical Course</h3>
+                            <h4 class="card-subtitle mb-2 text-muted">Measuring translational dynamics by ribosome profiling</h4>
+                            <p class="card-text">
+                              <strong>Date:</strong> 26 March - 1 April 2023<br>
+                              <strong>Link:</strong> <a href="https://www.embl.org/about/info/course-and-conference-office/events/mtd23-01/" target="_blank">Event Details</a>
+                            </p>
+                          </div>
+                        </div>
+                        <div class="card mb-3">
+                          <div class="card-body">
+                            <h3 class="card-title">RiboSeq data analysis workshop</h3>
+                            <h4 class="card-subtitle mb-2 text-muted">SFI CRT in Genomics Data Sciences</h4>
+                            <p class="card-text">
+                              <strong>Date:</strong> 28 - 29 October 2021
+                            </p>
+                          </div>
+                        </div>
+                        <div class="card mb-3">
+                          <div class="card-body">
+                            <h3 class="card-title">RiboSeq data analysis workshop</h3>
+                            <h4 class="card-subtitle mb-2 text-muted">SFI CRT in Genomics Data Sciences</h4>
+                            <p class="card-text">
+                              <strong>Date:</strong> 23 October 2021
+                            </p>
+                          </div>
+                        </div>
+                        <div class="card mb-3">
+                          <div class="card-body">
+                            <h3 class="card-title">EMBO Practical Course</h3>
+                            <h4 class="card-subtitle mb-2 text-muted">Measuring translational dynamics by ribosome profiling</h4>
+                            <p class="card-text">
+                              <strong>Date:</strong> 17 - 25 March 2021<br>
+                              <strong>Link:</strong> <a href="https://www.embl.org/about/info/course-and-conference-office/events/mtd21-01/" target="_blank">Event Details</a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center text-white">
+      <!-- Section: Funder logos -->
+      <section>
+        <div class="funders">
+          <a href="https://www.sfi.ie/" class="funder-logo">
+            <img
+              src="images/sfi-logo.svg"
+              alt="Science Foundation Ireland"
+              class="funder-image"
+            />
+          </a>
+          <a href="https://elixir-europe.org/" class="funder-logo">
+            <img
+              src="images/Elixir.png"
+              alt="Elixir Europe"
+              class="funder-image"
+            />
+          </a>
+          <a href="https://research.ie/" class="funder-logo">
+            <img
+              src="images/IRC_Logo.png"
+              alt="Irish Research Council"
+              class="funder-image"
+              style="width: 100px"
+            />
+          </a>
+          <a href="https://www.fnp.org.pl/en/" class="funder-logo">
+            <img
+              src="images/Foundation_for_Polish_Science_logo.jpg"
+              alt="Foundation For Polish Science"
+              class="funder-image"
+            />
+          </a>
+          <a href="https://www.ncn.gov.pl/en" class="funder-logo">
+            <img
+              src="images/national_science_centre_poland.png"
+              alt="National Science Centre Poland"
+              class="funder-image"
+            />
+          </a>
+          <a href="https://wellcome.org/" class="funder-logo">
+            <img
+              src="images/Wellcome.png"
+              alt="Wellcome"
+              class="funder-image"
+            />
+          </a>
+        </div>
+      </section>
+      <!-- End of Section: Funder logos -->
+      <!-- Section: Social media -->
+      <section class="mb-4" style="background-color: rgba(0, 0, 0, 0.063)">
+        <!-- Twitter -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="https://twitter.com/riboseqorg"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <!-- Github -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="https://github.com/riboseqorg"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-github"></i
+        ></a>
+        <p class="text-dark">RiboSeq.Org</p>
+      </section>
+      <!-- End Section: Social media -->
+      <!-- Copyright -->
+      <!-- End Copyright -->
+    </footer>
+  </body>
+</html>
