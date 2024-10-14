@@ -90,10 +90,10 @@
             <div class="col-12">
                 <ul class="nav nav-pills justify-content-center" id="tutorialTabs" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="overviews-tab" data-bs-toggle="pill" data-bs-target="#overviews" type="button" role="tab">Overviews</button>
+                        <a class="nav-link active" id="overviews-tab" data-bs-toggle="pill" data-bs-target="#overviews" type="button" role="tab">Overviews</a>
                     </li>
                     <li class="nav-item dropdown" role="presentation">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Tool-specific</a>
+                        <button class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Tool-specific</button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" id="data-portal-tab" data-bs-toggle="pill" data-bs-target="#data-portal" type="button" role="tab">Data Portal</a></li>
                             <li><a class="dropdown-item" id="ribogalaxy-tab" data-bs-toggle="pill" data-bs-target="#ribogalaxy" type="button" role="tab">RiboGalaxy</a></li>
@@ -102,10 +102,10 @@
                         </ul>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="end-to-end-tab" data-bs-toggle="pill" data-bs-target="#end-to-end" type="button" role="tab">End-to-end</button>
+                        <a class="nav-link" id="end-to-end-tab" data-bs-toggle="pill" data-bs-target="#end-to-end" type="button" role="tab">End-to-end</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="task-specific-tab" data-bs-toggle="pill" data-bs-target="#task-specific" type="button" role="tab">Task-specific</button>
+                        <a class="nav-link" id="task-specific-tab" data-bs-toggle="pill" data-bs-target="#task-specific" type="button" role="tab">Task-specific</a>
                     </li>
                 </ul>
             </div>
@@ -375,13 +375,13 @@
             
             categories.forEach(category => {
                 const categoryTutorials = tutorials.filter(tutorial => tutorial.categories.includes(category));
+			debugger
                 const categoryElement = document.getElementById(category);
                 if (categoryElement) {
                     categoryElement.innerHTML = `
                         <div class="row">
                             ${categoryTutorials.map(createTutorialCard).join('')}
-                        </div>
-                    `;
+                        </div>`;
                 }
             });
         }
@@ -389,18 +389,18 @@
         // Populate tutorials and activate the first tab
         document.addEventListener('DOMContentLoaded', function() {
             populateTutorials();
-            var firstTab = document.querySelector('.dropdown-item');
+            //var firstTab = document.querySelector('.dropdown-item');
             var firstTabContent = document.querySelector('.tab-pane');
-            firstTab.classList.add('active');
+            //firstTab.classList.add('active');
             firstTabContent.classList.add('show', 'active');
         });
         // Activate the first tab by default
-        document.addEventListener('DOMContentLoaded', function() {
-            var firstTab = document.querySelector('.dropdown-item');
-            var firstTabContent = document.querySelector('.tab-pane');
-            firstTab.classList.add('active');
-            firstTabContent.classList.add('show', 'active');
-        });
+        //document.addEventListener('DOMContentLoaded', function() {
+        //    var firstTab = document.querySelector('.dropdown-item');
+        //    var firstTabContent = document.querySelector('.tab-pane');
+        //    firstTab.classList.add('active');
+        //    firstTabContent.classList.add('show', 'active');
+        //});
     </script>
 </body>
 </html>
