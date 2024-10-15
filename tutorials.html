@@ -93,10 +93,10 @@
               <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="trainings.html">Trainings</a>
+              <a class="nav-link" href="trainings.html">Trainings</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="tutorials.html">Tutorials</a>
+              <a class="nav-link active" href="tutorials.html">Tutorials</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="HOF.html"
@@ -114,22 +114,22 @@
             <div class="col-12">
                 <ul class="nav nav-pills justify-content-center" id="tutorialTabs" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="overviews-tab" data-bs-toggle="pill" data-bs-target="#overviews" type="button" role="tab">Overviews</a>
+                        <a class="nav-link" id="overviews-tab" data-bs-toggle="pill" data-bs-target="#overviews" type="button" role="tab" href="#overviews">Overviews</a>
                     </li>
                     <li class="nav-item dropdown" role="presentation">
                         <button class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Tool-specific</button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" id="data-portal-tab" data-bs-toggle="pill" data-bs-target="#data-portal" type="button" role="tab">Data Portal</a></li>
-                            <li><a class="dropdown-item" id="ribogalaxy-tab" data-bs-toggle="pill" data-bs-target="#ribogalaxy" type="button" role="tab">RiboGalaxy</a></li>
-                            <li><a class="dropdown-item" id="trips-viz-tab" data-bs-toggle="pill" data-bs-target="#trips-viz" type="button" role="tab">Trips-Viz</a></li>
-                            <li><a class="dropdown-item" id="gwips-viz-tab" data-bs-toggle="pill" data-bs-target="#gwips-viz" type="button" role="tab">GWIPS-viz</a></li>
+                            <li><a class="dropdown-item" id="data-portal-tab" data-bs-toggle="pill" data-bs-target="#data-portal" type="button" role="tab" href="#data-portal">Data Portal</a></li>
+                            <li><a class="dropdown-item" id="ribogalaxy-tab" data-bs-toggle="pill" data-bs-target="#ribogalaxy" type="button" role="tab" href="#ribogalaxy">RiboGalaxy</a></li>
+                            <li><a class="dropdown-item" id="trips-viz-tab" data-bs-toggle="pill" data-bs-target="#trips-viz" type="button" role="tab" href="#trips-viz">Trips-Viz</a></li>
+                            <li><a class="dropdown-item" id="gwips-viz-tab" data-bs-toggle="pill" data-bs-target="#gwips-viz" type="button" role="tab" href="#gwips-viz">GWIPS-viz</a></li>
                         </ul>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="end-to-end-tab" data-bs-toggle="pill" data-bs-target="#end-to-end" type="button" role="tab">End-to-end</a>
+                        <a class="nav-link" id="end-to-end-tab" data-bs-toggle="pill" data-bs-target="#end-to-end" type="button" role="tab" href="#end-to-end">End-to-end</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="task-specific-tab" data-bs-toggle="pill" data-bs-target="#task-specific" type="button" role="tab">Task-specific</a>
+                        <a class="nav-link" id="task-specific-tab" data-bs-toggle="pill" data-bs-target="#task-specific" type="button" role="tab" href="#task-specific">Task-specific</a>
                     </li>
                 </ul>
             </div>
@@ -319,12 +319,20 @@
 
             // Data Portal Specific
             {
-                title: "Explore All Samples",
+                title: "Explore Selected Samples",
                 description: "Quick demonstration on how to get the links to explore all samples that matches your selected filters",
                 url: "tutorials/RDP_explore_all.html",
                 categories: ["data-portal", "task-specific"],
                 type: "video",
                 previewImage: "tutorials/Explore_All_header.png"
+            },
+            {
+                title: "Download Processed Files",
+                description: "Quick demonstration on how to get the links to download samples that matches your selected filters",
+                url: "tutorials/RDP_download_all.html",
+                categories: ["data-portal", "task-specific"],
+                type: "video",
+                previewImage: "tutorials/Download_All_files_header.png"
             },
             {
                 title: "Download All Metadata",
@@ -394,21 +402,6 @@
             window.open(url, '_blank');
         }
 
-        function populateTutorials() {
-            const categories = ['overviews', 'data-portal', 'ribogalaxy', 'trips-viz', 'gwips-viz', 'end-to-end', 'task-specific'];
-            
-            categories.forEach(category => {
-                const categoryTutorials = tutorials.filter(tutorial => tutorial.categories.includes(category));
-			debugger
-                const categoryElement = document.getElementById(category);
-                if (categoryElement) {
-                    categoryElement.innerHTML = `
-                        <div class="row">
-                            ${categoryTutorials.map(createTutorialCard).join('')}
-                        </div>`;
-                }
-            });
-        }
 
         // Populate tutorials and activate the first tab
         document.addEventListener('DOMContentLoaded', function() {
@@ -417,6 +410,48 @@
             var firstTabContent = document.querySelector('.tab-pane');
             //firstTab.classList.add('active');
             firstTabContent.classList.add('show', 'active');
+        });
+
+        // Add this function to your existing script
+        function activateTab(tabId) {
+            const tab = document.querySelector(`#tutorialTabs [data-bs-target="#${tabId}"]`);
+            if (tab) {
+                const tabInstance = new bootstrap.Tab(tab);
+                tabInstance.show();
+            }
+        }
+
+        // Modify your DOMContentLoaded event listener
+        document.addEventListener('DOMContentLoaded', function() {
+            populateTutorials();
+            
+            // Check for hash in URL and activate corresponding tab
+            if (window.location.hash) {
+                const tabId = window.location.hash.substring(1);
+                activateTab(tabId);
+            } else {
+                // If no hash, activate the first tab
+                const firstTab = document.querySelector('#tutorialTabs .nav-link');
+                if (firstTab) {
+                    const tabInstance = new bootstrap.Tab(firstTab);
+                    tabInstance.show();
+                }
+            }
+
+            // Add event listener for hash changes
+            window.addEventListener('hashchange', function() {
+                const tabId = window.location.hash.substring(1);
+                activateTab(tabId);
+            });
+
+            // Add click event listeners to tab links
+            document.querySelectorAll('#tutorialTabs .nav-link, #tutorialTabs .dropdown-item').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const tabId = this.getAttribute('href').substring(1);
+                    window.location.hash = tabId;
+                });
+            });
         });
     </script>
 </body>
