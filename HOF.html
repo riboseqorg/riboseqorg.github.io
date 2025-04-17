@@ -41,9 +41,15 @@
 
     <link href="css/riboseq-css.css" rel="stylesheet" />
     <style>
-      h2 { text-shadow: 1px 1px 3px Gold; }
-      h3 { text-shadow: 1px 1px 3px CadetBlue; }
-      h4 { text-shadow: 1px 1px 3px DarkGoldenRod; }
+      h2 {
+        text-shadow: 1px 1px 3px Gold;
+      }
+      h3 {
+        text-shadow: 1px 1px 3px CadetBlue;
+      }
+      h4 {
+        text-shadow: 1px 1px 3px DarkGoldenRod;
+      }
     </style>
   </head>
   <body class="bg-light">
@@ -98,7 +104,8 @@
               <div class="card-body">
                 <h1 class="text-center mb-4">RiboSeq.Org Hall of Fame</h1>
                 <p class="lead">
-                  This page is dedicated to the winners of Ribosome Profiling datamining competitions.
+                  This page is dedicated to the winners of Ribosome Profiling
+                  datamining competitions.
                 </p>
                 <div class="row">
                   <div class="col-md-3">
@@ -110,12 +117,23 @@
                     >
                       <a
                         class="nav-link active"
+                        id="v-pills-embo-2025-tab"
+                        data-toggle="pill"
+                        href="#v-pills-embo-2025"
+                        role="tab"
+                        aria-controls="v-pills-embo-2025"
+                        aria-selected="true"
+                        >EMBO Course March 2025</a
+                      >
+
+                      <a
+                        class="nav-link"
                         id="v-pills-embo-2023-tab"
                         data-toggle="pill"
                         href="#v-pills-embo-2023"
                         role="tab"
                         aria-controls="v-pills-embo-2023"
-                        aria-selected="true"
+                        aria-selected="false"
                         >EMBO Course March 2023</a
                       >
                       <a
@@ -144,14 +162,52 @@
                     <div class="tab-content" id="v-pills-tabContent">
                       <div
                         class="tab-pane fade show active"
+                        id="v-pills-embo-2025"
+                        role="tabpanel"
+                        aria-labelledby="v-pills-embo-2025-tab"
+                      >
+                        <h2>
+                          EMBO practical course "Measuring Translational
+                          Dynamics by Ribosome Profiling" in March 2025
+                        </h2>
+                        <h3>
+                          <img src="images/Gold.png" alt="Gold" /> Gold
+                          RiboMiner: Ramon Duran (KU Leuven)
+                        </h3>
+                        <h4>
+                          <img src="images/Silver.png" alt="Silver" /> Silver
+                          RiboMiner: Eleonora Zilio (University of Cologne)
+                        </h4>
+                        <h5>
+                          <img src="images/Bronze.png" alt="Bronze" /> Bronze
+                          RiboMiner: Matthias Simoes Krockenberger (University
+                          of Oslo)
+                        </h5>
+                      </div>
+                      <div
+                        class="tab-pane fade"
                         id="v-pills-embo-2023"
                         role="tabpanel"
                         aria-labelledby="v-pills-embo-2023-tab"
                       >
-                        <h2>EMBO practical course "Measuring Translational Dynamics by Ribosome Profiling" in March 2023</h2>
-                        <h3><img src="images/Gold.png" alt="Gold"> Gold RiboMiner: Diana Rubalcava-Gracia (Karolinska Institute)</h3>
-                        <h4><img src="images/Silver.png" alt="Silver"> Silver RiboMiner: Lidiia Koludarova (University of Helsinki)</h4>
-                        <h5><img src="images/Bronze.png" alt="Bronze"> Bronze RiboMiner: Luuk Broeils (Princess Máxima Center for pediatric oncology, Utrecht)</h5>
+                        <h2>
+                          EMBO practical course "Measuring Translational
+                          Dynamics by Ribosome Profiling" in March 2023
+                        </h2>
+                        <h3>
+                          <img src="images/Gold.png" alt="Gold" /> Gold
+                          RiboMiner: Diana Rubalcava-Gracia (Karolinska
+                          Institute)
+                        </h3>
+                        <h4>
+                          <img src="images/Silver.png" alt="Silver" /> Silver
+                          RiboMiner: Lidiia Koludarova (University of Helsinki)
+                        </h4>
+                        <h5>
+                          <img src="images/Bronze.png" alt="Bronze" /> Bronze
+                          RiboMiner: Luuk Broeils (Princess Máxima Center for
+                          pediatric oncology, Utrecht)
+                        </h5>
                       </div>
                       <div
                         class="tab-pane fade"
@@ -159,11 +215,29 @@
                         role="tabpanel"
                         aria-labelledby="v-pills-sfi-2021-tab"
                       >
-                        <h2>RiboSeq Workshop at SFI CRT in Genomics Data Science in October 2021</h2>
-                        <h3><img src="images/Gold.png" alt="Gold"> Gold RiboMiner: Tyler Medina and Roofiya Koya aka Death Association</h3>
-                        <h4><img src="images/Silver.png" alt="Silver"> Silver RiboMiner: Jacopo Umberto Verga and Jisha Jasmin</h4>
-                        <h5><img src="images/Bronze.png" alt="Bronze"> Bronze RiboMiner: Kevin Ryan and Philip O'Brien aka Cork Screws</h5>
-                        <img src="images/CRT.png" alt="CRT" class="img-fluid mt-3">
+                        <h2>
+                          RiboSeq Workshop at SFI CRT in Genomics Data Science
+                          in October 2021
+                        </h2>
+                        <h3>
+                          <img src="images/Gold.png" alt="Gold" /> Gold
+                          RiboMiner: Tyler Medina and Roofiya Koya aka Death
+                          Association
+                        </h3>
+                        <h4>
+                          <img src="images/Silver.png" alt="Silver" /> Silver
+                          RiboMiner: Jacopo Umberto Verga and Jisha Jasmin
+                        </h4>
+                        <h5>
+                          <img src="images/Bronze.png" alt="Bronze" /> Bronze
+                          RiboMiner: Kevin Ryan and Philip O'Brien aka Cork
+                          Screws
+                        </h5>
+                        <img
+                          src="images/CRT.png"
+                          alt="CRT"
+                          class="img-fluid mt-3"
+                        />
                       </div>
                       <div
                         class="tab-pane fade"
@@ -171,11 +245,28 @@
                         role="tabpanel"
                         aria-labelledby="v-pills-embo-2021-tab"
                       >
-                        <h2>EMBO practical course "Measuring Translational Dynamics by Ribosome Profiling" in May 2021</h2>
-                        <h3><img src="images/Gold.png" alt="Gold"> Gold RiboMiner: Markus Hoepfler (MRC LMB, Cambridge)</h3>
-                        <h4><img src="images/Silver.png" alt="Silver"> Silver RiboMiner: Simone Larivera (University of Regensburg)</h4>
-                        <h5><img src="images/Bronze.png" alt="Bronze"> Bronze RiboMiner: Markus Schosserer (BOKU, Vienna) and Mikhail Mesitov (IMB Mainz)</h5>
-                        <img src="images/EMBL.jpg" alt="EMBL" class="img-fluid mt-3">
+                        <h2>
+                          EMBO practical course "Measuring Translational
+                          Dynamics by Ribosome Profiling" in May 2021
+                        </h2>
+                        <h3>
+                          <img src="images/Gold.png" alt="Gold" /> Gold
+                          RiboMiner: Markus Hoepfler (MRC LMB, Cambridge)
+                        </h3>
+                        <h4>
+                          <img src="images/Silver.png" alt="Silver" /> Silver
+                          RiboMiner: Simone Larivera (University of Regensburg)
+                        </h4>
+                        <h5>
+                          <img src="images/Bronze.png" alt="Bronze" /> Bronze
+                          RiboMiner: Markus Schosserer (BOKU, Vienna) and
+                          Mikhail Mesitov (IMB Mainz)
+                        </h5>
+                        <img
+                          src="images/EMBL.jpg"
+                          alt="EMBL"
+                          class="img-fluid mt-3"
+                        />
                       </div>
                     </div>
                   </div>
